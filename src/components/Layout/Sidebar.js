@@ -185,7 +185,7 @@ const Sidebar = ({ activePage, setActivePage }) => {
 
       {/* Expanded Sidebar */}
       <motion.div
-        className="fixed left-0 top-0 h-full w-96 neu-surface p-6 z-50 overflow-y-auto"
+        className="fixed left-0 top-0 h-full w-105 neu-surface p-6 z-50 overflow-y-auto"
         variants={sidebarVariants}
         initial="closed"
         animate={isOpen ? 'open' : 'closed'}
