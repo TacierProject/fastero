@@ -1,7 +1,7 @@
 import { createThirdwebClient } from "thirdweb";
-import { ConnectButton } from "thirdweb/react";
-import { darkTheme } from "thirdweb/react";
-import { createWallet } from "thirdweb/wallets";
+import { ConnectButton } from "@thirdweb/react";
+import { darkTheme } from "@thirdweb/react";
+import { createWallet } from "@thirdweb/wallets";
 
 const client = createThirdwebClient({
   clientId: "91e2d2d514dd899aa83f2f028742a060",
