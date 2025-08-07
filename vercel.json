@@ -14,8 +14,9 @@
     {
       "src": "/static/(.*)",
       "headers": {
-        "cache-control": "s-maxage=31536000,immutable"
-      }
+        "cache-control": "s-maxage=31536000, immutable"
+      },
+      "dest": "/static/$1"
     },
     {
       "src": "/(.*)",
@@ -23,9 +24,18 @@
     }
   ],
   "env": {
-    "REACT_APP_THIRDWEB_CLIENT_ID": "@thirdweb_client_id",
-    "REACT_APP_NFT_CONTRACT": "@nft_contract_address",
-    "REACT_APP_API_BASE_URL": "@api_base_url",
-    "REACT_APP_NFT_METADATA_URL": "@nft_metadata_url"
+    "REACT_APP_THIRDWEB_CLIENT_ID": "91e2d2d514dd899aa83f2f028742a060",
+    "REACT_APP_NFT_CONTRACT": "0x3466ce2a1e65d564d93650d8d0f350ba5a19cdb7",
+    "REACT_APP_API_BASE_URL": "https://api.fasttero.com",
+    "REACT_APP_NFT_METADATA_URL": "https://metadata.fasttero.com",
+    "REACT_APP_MORALIS_API": "https://deep-index.moralis.io/api/v2",
+    "REACT_APP_ETHEREUM_RPC": "https://mainnet.infura.io/v3/YOUR_INFURA_KEY",
+    "REACT_APP_POLYGON_RPC": "https://polygon-rpc.com",
+    "REACT_APP_BSC_RPC": "https://bsc-dataseed1.binance.org",
+    "REACT_APP_ENABLE_TESTNET": "false",
+    "REACT_APP_ENABLE_DEBUG": "false",
+    "REACT_APP_TWITTER_URL": "https://twitter.com/fasttero",
+    "REACT_APP_DISCORD_URL": "https://discord.gg/fasttero",
+    "REACT_APP_TELEGRAM_URL": "https://t.me/fasttero"
   }
 }
