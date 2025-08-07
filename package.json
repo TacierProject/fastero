@@ -24,6 +24,8 @@
     "react-icons": "^4.12.0",
     "react-router-dom": "^6.8.1",
     "react-scripts": "5.0.1",
+    "thirdweb": "^5.0.0",
+    "@thirdweb-dev/sdk": "^latest",
     "@thirdweb-dev/react": "3.12.0",
     "@thirdweb-dev/wallets": "1.1.13",
     "web-vitals": "^3.0.4"
