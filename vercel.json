@@ -1,0 +1,36 @@
+{
+  "version": 2,
+  "name": "fasttero-defi",
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "build"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/static/(.*)",
+      "headers": {
+        "cache-control": "s-maxage=31536000,immutable"
+      }
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
+  ],
+  "env": {
+    "REACT_APP_THIRDWEB_CLIENT_ID": "@thirdweb_client_id",
+    "REACT_APP_NFT_CONTRACT": "@nft_contract_address",
+    "REACT_APP_API_BASE_URL": "@api_base_url",
+    "REACT_APP_NFT_METADATA_URL": "@nft_metadata_url"
+  },
+  "functions": {
+    "app/api/**/*.js": {
+      "runtime": "nodejs18.x"
+    }
+  }
+}
