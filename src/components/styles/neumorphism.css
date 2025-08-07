@@ -1,1 +1,386 @@
+:root {
+  --primary-bg: #f0f0f0;
+  --secondary-bg: #ffffff;
+  --shadow-light: #ffffff;
+  --shadow-dark: #d1d1d1;
+  --text-primary: #2c2c2c;
+  --text-secondary: #666666;
+  --accent-color: #4a90e2;
+  --success-color: #27ae60;
+  --warning-color: #f39c12;
+  --danger-color: #e74c3c;
 
+  --neu-distance: 10px;
+  --neu-intensity: 0.3;
+  --neu-blur: 20px;
+  --border-radius: 15px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: var(--primary-bg);
+  color: var(--text-primary);
+  overflow-x: hidden;
+  height: 100vh;
+  width: 100vw;
+  max-width: 100vw;
+}
+
+html {
+  overflow-x: hidden;
+  width: 100vw;
+  max-width: 100vw;
+}
+
+.neu-surface {
+  background: var(--primary-bg);
+  border-radius: var(--border-radius);
+  box-shadow: var(--neu-distance) var(--neu-distance) var(--neu-blur)
+      rgba(0, 0, 0, var(--neu-intensity)),
+    calc(-1 * var(--neu-distance)) calc(-1 * var(--neu-distance)) var(--neu-blur)
+      var(--shadow-light);
+}
+
+.neu-pressed {
+  background: var(--primary-bg);
+  border-radius: var(--border-radius);
+  box-shadow: inset var(--neu-distance) var(--neu-distance) var(--neu-blur)
+      rgba(0, 0, 0, var(--neu-intensity)),
+    inset calc(-1 * var(--neu-distance)) calc(-1 * var(--neu-distance)) var(--neu-blur)
+      var(--shadow-light);
+}
+
+.neu-button {
+  background: var(--primary-bg);
+  border: none;
+  border-radius: var(--border-radius);
+  box-shadow: var(--neu-distance) var(--neu-distance) var(--neu-blur)
+      rgba(0, 0, 0, var(--neu-intensity)),
+    calc(-1 * var(--neu-distance)) calc(-1 * var(--neu-distance)) var(--neu-blur)
+      var(--shadow-light);
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: var(--text-primary);
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.neu-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 15px 15px 25px rgba(0, 0, 0, 0.35), -15px -15px 25px var(--shadow-light);
+}
+
+.neu-button:active {
+  transform: translateY(0);
+  box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.2), inset -5px -5px 10px var(--shadow-light);
+}
+
+.neu-toggle {
+  width: 60px;
+  height: 30px;
+  background: var(--primary-bg);
+  border-radius: 30px;
+  position: relative;
+  cursor: pointer;
+  box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.2), inset -5px -5px 10px var(--shadow-light);
+  transition: all 0.3s ease;
+}
+
+.neu-toggle-knob {
+  width: 26px;
+  height: 26px;
+  background: var(--primary-bg);
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  transition: all 0.3s ease;
+  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2), -3px -3px 6px var(--shadow-light);
+}
+
+.neu-toggle.active {
+  background: var(--accent-color);
+}
+
+.neu-toggle.active .neu-toggle-knob {
+  left: 32px;
+}
+
+.neu-input {
+  background: var(--primary-bg);
+  border: none;
+  border-radius: var(--border-radius);
+  box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.1), inset -5px -5px 10px var(--shadow-light);
+  padding: 12px 16px;
+  font-size: 14px;
+  color: var(--text-primary);
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.neu-input:focus {
+  box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.2), inset -5px -5px 10px var(--shadow-light),
+    0 0 0 2px var(--accent-color);
+}
+
+.neu-card {
+  background: var(--primary-bg);
+  border-radius: var(--border-radius);
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1), -10px -10px 20px var(--shadow-light);
+  padding: 16px;
+  margin: 8px;
+}
+
+.neu-popup {
+  background: var(--primary-bg);
+  border-radius: 20px;
+  box-shadow: 20px 20px 40px rgba(0, 0, 0, 0.3), -20px -20px 40px var(--shadow-light);
+  padding: 30px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  max-width: 90vw;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.masonry-container {
+  columns: 3;
+  column-gap: 20px;
+  padding: 20px;
+}
+
+.masonry-item {
+  break-inside: avoid;
+  margin-bottom: 20px;
+  animation: float 6s ease-in-out infinite;
+}
+
+.masonry-item:nth-child(odd) {
+  animation-delay: -2s;
+}
+
+.masonry-item:nth-child(even) {
+  animation-delay: -4s;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.spin-button {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, var(--accent-color), var(--success-color));
+  border: none;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 15px 15px 30px rgba(0, 0, 0, 0.2), -15px -15px 30px var(--shadow-light);
+  animation: pulse 2s infinite;
+}
+
+.spin-button:hover {
+  transform: scale(1.05);
+}
+
+.spin-button:active {
+  transform: scale(0.95);
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(74, 144, 226, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 20px rgba(74, 144, 226, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(74, 144, 226, 0);
+  }
+}
+
+.sidebar-slide {
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+}
+
+.sidebar-slide.open {
+  transform: translateX(0);
+}
+
+.icon-realistic {
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.3));
+  transition: all 0.3s ease;
+}
+
+.icon-realistic:hover {
+  filter: drop-shadow(4px 4px 8px rgba(0, 0, 0, 0.4));
+  transform: scale(1.1);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .main-content {
+    margin-left: 0 !important;
+    width: 100vw !important;
+    max-width: 100vw !important;
+    padding: 15px !important;
+  }
+
+  /* Hide collapsed sidebar on mobile */
+  .fixed.left-0.w-16 {
+    display: none !important;
+  }
+
+  /* Ensure menu toggle button is visible and accessible */
+  .neu-button.fixed.top-4.left-4 {
+    z-index: 1000 !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3) !important;
+  }
+
+  .content-wrapper {
+    padding-top: 80px !important;
+    padding-bottom: 40px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+  }
+
+  .neu-card {
+    padding: 12px !important;
+    margin: 6px 0 !important;
+  }
+
+  .neu-button {
+    padding: 6px 10px !important;
+    font-size: 12px !important;
+  }
+
+  .grid {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+
+  .grid-cols-2 {
+    grid-template-columns: 1fr 1fr !important;
+  }
+
+  .grid-cols-3 {
+    grid-template-columns: 1fr !important;
+  }
+
+  .grid-cols-4 {
+    grid-template-columns: 1fr 1fr !important;
+  }
+
+  .masonry-container {
+    columns: 2 !important;
+    column-gap: 12px !important;
+    padding: 12px !important;
+  }
+
+  .page-header {
+    margin-bottom: 20px !important;
+  }
+
+  .page-header h1 {
+    font-size: 28px !important;
+    margin-bottom: 8px !important;
+  }
+
+  .page-header p {
+    font-size: 16px !important;
+  }
+
+  .tab-navigation {
+    margin-bottom: 16px !important;
+  }
+
+  .tab-navigation button {
+    padding: 6px 12px !important;
+    font-size: 12px !important;
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 480px) {
+  .main-content {
+    margin-left: 0 !important;
+    width: 100vw !important;
+    max-width: 100vw !important;
+    padding: 10px !important;
+  }
+
+  .content-wrapper {
+    padding: 0 10px !important;
+    padding-top: 80px !important;
+    padding-bottom: 40px !important;
+  }
+
+  .neu-card {
+    padding: 10px !important;
+    margin: 4px 0 !important;
+  }
+
+  .page-header h1 {
+    font-size: 24px !important;
+  }
+
+  .page-header p {
+    font-size: 14px !important;
+  }
+
+  .grid {
+    gap: 8px !important;
+  }
+
+  .masonry-container {
+    columns: 1 !important;
+    column-gap: 8px !important;
+    padding: 8px !important;
+  }
+
+  .tab-navigation {
+    margin-bottom: 12px !important;
+  }
+
+  .tab-navigation button {
+    padding: 6px 12px !important;
+    font-size: 12px !important;
+  }
+}
+
+/* Prevent horizontal overflow */
+* {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.neu-card,
+.neu-surface,
+.neu-button {
+  max-width: 100%;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
