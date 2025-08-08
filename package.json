@@ -11,6 +11,7 @@
     "eject": "react-scripts eject"
   },
   "dependencies": {
+    "@thirdweb/react": "latest",
     "@thirdweb-dev/react": "^4",
     "@thirdweb-dev/sdk": "^4",
     "@ethersproject/providers": "5.7.2",
