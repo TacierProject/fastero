@@ -1,20 +1,13 @@
-const { addWebpackPlugin, override } = require('customize-cra');
-const webpack = require('webpack');
+const { override } = require('customize-cra');
 
 module.exports = override(
-  addWebpackPlugin(
-    new webpack.ProvidePlugin({
-      process: 'process/browser',
-      Buffer: ['buffer', 'Buffer']
-    })
-  ),
+  // Add your custom Webpack configurations here
+  // For example, to add support for polyfills:
   (config) => {
     config.resolve.fallback = {
       ...config.resolve.fallback,
-      stream: require.resolve('stream-browserify'),
-      util: require.resolve('util'),
+      process: require.resolve('process/browser'),
       buffer: require.resolve('buffer'),
-      process: require.resolve('process/browser')
     };
     return config;
   }
