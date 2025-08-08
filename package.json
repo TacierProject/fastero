@@ -11,21 +11,21 @@
     "eject": "react-scripts eject"
   },
   "dependencies": {
-    "@thirdweb-dev/react": "^4.9.4",
-    "@thirdweb-dev/sdk": "^4.0.99",
-    "@ethersproject/providers": "^5.7.2",
-    "ethers": "^5.7.2",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
+    "@thirdweb-dev/react": "4.9.4",
+    "@thirdweb-dev/sdk": "4.9.4",
+    "@ethersproject/providers": "5.7.2",
+    "ethers": "5.7.2",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
     "react-scripts": "5.0.1",
-    "web-vitals": "^3.3.1",
-    "buffer": "^6.0.3",
-    "process": "^0.11.10",
-    "stream-browserify": "^3.0.0",
-    "util": "^0.12.5"
+    "web-vitals": "3.3.1",
+    "buffer": "6.0.3",
+    "process": "0.11.10",
+    "stream-browserify": "3.0.0",
+    "util": "0.12.5"
   },
   "devDependencies": {
-    "dotenv": "^16.4.5"
+    "dotenv": "16.4.5"
   },
   "browserslist": {
     "production": [
@@ -39,8 +39,9 @@
       "last 1 safari version"
     ]
   },
-  "resolutions": {
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+  "overrides": {
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "ethers": "5.7.2"
   }
 }
